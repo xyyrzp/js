@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	window.onload=function(){
+		var oTxt=document.getElementById("txt1");
+		var oUl=document.getElementById("ul1");
+
+
+		oTxt.onkeyup=function(ev){
+			var ev=ev||event;
+			
+			if(this.value!=''){
+
+				if(ev.keyCode==13 && ev.ctrlKey){//在this.value后面，判断值不为空时继续输入，按键发送
+
+				  var oLi=document.createElement("li");
+				  oLi.innerHTML=this.value;
+
+				if(oUl.children[0]){
+					oUl.insertBefore(oLi,oUl.children[0]);
+				}else{
+					oUl.appendChild(oLi);
+				}
+			}
+		  }
+		}
+	}
+	</script>
+
+</head>
+<body>
+	<input type="text" id="txt1" /><br />
+	<!-- <textarea id="text1" style="rows:10;cols:50"></textarea> -->
+	<ul id="ul1">
+		
+	</ul>
+</body>
+</html>

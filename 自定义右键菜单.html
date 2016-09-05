@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+		#div1{
+			width: 100px;
+			height: 200px;
+			border:1px solid red;
+			display: none;
+			position: absolute;
+		}
+	</style>
+	<script>
+	window.onload=function(){
+		var oDiv=document.getElementById("div1");
+
+		document.oncontextmenu=function(ev){
+            var ev=ev||event;
+
+             oDiv.style.left=ev.clientX+'px';
+             oDiv.style.top=ev.clientY+'px';
+
+             oDiv.style.display='block';
+             
+             return false;
+		}
+
+		document.onclick=function(){
+			oDiv.style.display="none";
+		}
+	}
+	</script>
+</head>
+<body>
+	<div id="div1">
+		
+	</div>
+</body>
+</html>

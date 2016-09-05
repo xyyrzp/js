@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	window.onload=function(){
+		 var oBtn1 = document.getElementById('btn1');
+		 var oBtn2 = document.getElementById('btn2');
+		 var oP = document.getElementById('p1');
+		 var num = 14;
+
+		 oBtn2.onclick=function(){
+		 	
+		 	 if(num<20){ 
+		 	 	num++;
+		 	 	oP.style.fontSize = num + "px";
+		 	 	
+		 	 }
+
+
+		 };
+		 oBtn1.onclick=function(){
+
+		 	
+		 	 if(num>12){
+		 	  num--;
+		 	  oP.style.fontSize = num + "px";
+		 	  alert(num);
+		 	}
+		 };
+	};
+	</script>
+</head>
+<body>
+	<input id="btn1" type="button" value="-" />
+	<input id="btn2" type="button" value="+" />
+	<p id="p1" style="font-size: 15px;">
+4、消除软件危机的途径：既要有技术措施（方法 和工具），又要有必要的组织管理措施
+软件工程应使用已有的工程规则的理论和模式，来解决所谓的"软件危机"。
+5、软件工程支撑环境：如果把各个阶段使用的软件工具有机地集合成一个集体，支持软件开发的全过程。</p>
+</body>
+</html>

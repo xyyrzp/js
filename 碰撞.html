@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+		#div1{
+			width: 200px;
+			height: 200px;
+			background: red;
+			position: absolute;
+			z-index: 2;
+    }
+    	#img1{
+    	display: block;
+    	position: absolute;
+    	left: 500px;
+    	top: 300px;
+
+    }
+	</style>
+	<script>
+	window.onload=function(){
+		var oDiv=document.getElementById("div1");
+		var oImg=document.getElementById("img1");
+
+
+
+		oDiv.onmousedown=function(ev){
+			var ev=ev||event;
+			var disX=ev.clientX-oDiv.offsetLeft;
+			var disY=ev.clientY-oDiv.offsetTop;
+
+			if(oDiv.setCapture){
+				oDiv.setCapture();
+		}
+
+			document.onmousemove=function(ev){
+				var ev=ev||event;
+				var L=ev.clientX-disX;
+				var T=ev.clientY-disY;
+
+				var L1=L;
+				var Rl=L1+oDiv.offsetWidth;
+				var T1=T;
+				var B1=T1+oDiv.offsetHeight;
+
+				var L2=oImg.offsetLeft;
+				var R2=L2+oImg.offsetWidth;
+				var T2=oImg.offsetTop;
+				var B2=T2+oImg.offsetHeight;
+/*
+				if(L<0){
+					L=0;
+				}else if(L>document.documentElement.clientWidth-oDiv.offsetWidth){
+					L=document.documentElement.clientWidth-oDiv.offsetWidth;
+				}
+
+				if(T<0){
+					T=0;
+				}else if(T>document.documentElement.clientHeight-oDiv.offsetHeight){
+					T=document.documentElement.clientHeight-oDiv.offsetHeight;
+				}*/
+
+
+
+				
+
+			if(R1<L2||L1>R2||B1<T2||T1>B2){
+				oImg.src='../images/2.png';
+				
+			}else{
+				oImg.src='../images/1.png';
+			}
+
+			oDiv.style.left=L+'px';
+			oDiv.style.top=T+'px';
+			}
+
+			document.onmouseup=function(){
+				document.onmousemove=document.onmouseup=null;
+			}
+
+		}
+	}
+	</script>
+</head>
+<body>
+	<div id="div1">
+		
+	</div>
+	<img src="../images/2.png" id="img1"/>
+</body>
+</html>

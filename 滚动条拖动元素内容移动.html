@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+		#div1{
+			width: 30px;
+			height: 500px;
+			background: red;
+			position: absolute;
+			top: 10px;
+			left: 10px;
+		}
+		#div2{
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			background: black;
+		}
+		#div3{
+			width: 498px;
+			height: 498px;
+			border: 1px solid green;
+			position: absolute;
+			top: 10px;
+			left: 50px;
+			
+		}
+		#div4{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+	</style>
+	<script>
+	window.onload=function(){
+		var oDiv1=document.getElementById("div1");
+		var oDiv2=document.getElementById("div2");
+		var oDiv3=document.getElementById("div3");
+		var oDiv4=document.getElementById("div4");
+		
+		oDiv2.onmousedown=function(ev){
+			var ev=ev||event;
+			var disT=ev.clientY-this.offsetTop;
+			var tMax=oDiv1.offsetHeight-oDiv2.offsetHeight;
+
+			document.onmousemove=function(ev){
+				var ev=ev||event;
+				var T=ev.clientY-disT;
+				
+				if(T<0){
+					T=0;
+				}else if(T>tMax){
+					T=tMax;
+				}
+
+				oDiv2.style.top=T+'px';
+				var iScale=T/tMax;
+				//document.title=iScale;
+
+				oDiv4.style.top=(oDiv3.clientHeight-oDiv4.offsetHeight)*iScale+'px';
+				
+
+			}
+			document.onmouseup=function(){
+				document.onmouseup=document.onmousemove=null;
+			}
+           return false;
+		}
+	}
+	</script>
+
+</head>
+<body>
+	<div id="div1">
+		<div id="div2">
+			
+		</div>
+	</div>
+	<div id="div3">
+		<div id="div4">
+			范冰冰，1981年9月16日生于山东青岛，电影演员、歌手，毕业于上海师范大学谢晋影视艺术学院。
+1996年参演电视剧《女强人》。1998年主演电视剧《还珠格格》系列成名，2001年起投身大银幕。[1] 
+2004年凭借电影《手机》获得第27届大众电影百花奖最佳女主角奖。[2]  2005年发行首张个人专辑《刚刚开始》；[3]  同年主演电影《墨攻》。2007年，参演电影《心中有鬼》获得第44届台湾电影金马奖最佳女配角奖；[4]  同年凭借电影《苹果》获得第4届欧亚国际电影节最佳女演员奖。[5] 
+2009年获得第12届中国电影表演艺术学会金凤凰奖。2010年登上纽约时代广场户外大屏幕播放的中国国家形象片；2011年主演李玉执导的电影《观音山》荣获第23届东京国际电影节最佳女演员奖；[6]  入选《环球时报》“最受全球关注文化人物”前五强，[7]  同年主演陈凯歌执导的古装电影《赵氏孤儿》。2011年担任东京国际电影节评委。[8] 
+2013、2014、2015连续三年登上福布斯中国名人榜榜首，成为首位蝉联三届福布斯中国名人榜第一名的中国女星。[9-10] 
+2013年凭借电影《二次曝光》获得第9届华鼎奖中国电影最佳女主角奖，[11]  凭借同名电影歌曲《一夜惊喜》获得首届伦敦国际华语电影节最佳原创电影歌曲奖，同年戛纳国际电影节好莱坞报道授予范冰冰年度最佳国际艺人奖。[12]  2014年参演的美国动作片《X战警：逆转未来》全球上映，同年登上美国《Vogue》封面；[13]  主演电视剧《武媚娘传奇》成为中国首部网络点击量超过100亿的电视剧。
+2015年范冰冰与成龙主演的好莱坞电影《跨境追捕》即将上映。
+范冰冰，1981年9月16日生于山东青岛，电影演员、歌手，毕业于上海师范大学谢晋影视艺术学院。
+1996年参演电视剧《女强人》。1998年主演电视剧《还珠格格》系列成名，2001年起投身大银幕。[1] 
+2004年凭借电影《手机》获得第27届大众电影百花奖最佳女主角奖。[2]  2005年发行首张个人专辑《刚刚开始》；[3]  同年主演电影《墨攻》。2007年，参演电影《心中有鬼》获得第44届台湾电影金马奖最佳女配角奖；[4]  同年凭借电影《苹果》获得第4届欧亚国际电影节最佳女演员奖。[5] 
+2009年获得第12届中国电影表演艺术学会金凤凰奖。2010年登上纽约时代广场户外大屏幕播放的中国国家形象片；2011年主演李玉执导的电影《观音山》荣获第23届东京国际电影节最佳女演员奖；[6]  入选《环球时报》“最受全球关注文化人物”前五强，[7]  同年主演陈凯歌执导的古装电影《赵氏孤儿》。2011年担任东京国际电影节评委。[8] 
+2013、2014、2015连续三年登上福布斯中国名人榜榜首，成为首位蝉联三届福布斯中国名人榜第一名的中国女星。[9-10] 
+2013年凭借电影《二次曝光》获得第9届华鼎奖中国电影最佳女主角奖，[11]  凭借同名电影歌曲《一夜惊喜》获得首届伦敦国际华语电影节最佳原创电影歌曲奖，同年戛纳国际电影节好莱坞报道授予范冰冰年度最佳国际艺人奖。[12]  2014年参演的美国动作片《X战警：逆转未来》全球上映，同年登上美国《Vogue》封面；[13]  主演电视剧《武媚娘传奇》成为中国首部网络点击量超过100亿的电视剧。
+2015年范冰冰与成龙主演的好莱坞电影《跨境追捕》即将上映。
+		</div>
+	</div>
+</body>
+</html>

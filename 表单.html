@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	window.onload=function(){
+		var oForm=document.getElementById("form1");
+
+
+		oForm.text1.onchange=function(){
+			alert(this.value);
+
+		}
+
+		oForm.sex.onchange=function(){
+			alert(this.value);
+		}
+		oForm.city.onchange=function(){
+
+			alert(this.value);
+
+		}
+		oForm.btn1.onclick=function(){
+			for(var i=0;i<oForm.hh.length;i++){
+				if(oForm.hh[i].checked){
+					alert(oForm.hh[i].value+"是选中了");
+				}else{
+					alert(oForm.hh[i].value+"是非选中了");
+				}
+				
+			}
+		}
+	}
+	</script>
+</head>
+<body>
+	<form id="form1">
+		<input type="text" name="text1" value="内容">
+		<input type="radio" name="sex" value="男" checked>男
+		<input type="radio" name="sex" value="女">女
+		<input type="checkbox" name="hh" value="音樂" checked>音樂
+		<input type="checkbox" name="hh" value="跑步" checked>跑步
+		<input type="checkbox" name="hh" value="游泳">游泳
+
+		<select name="city" >
+			<option value="选择的城市">选择的城市</option>
+			<option value="北京" checked>北京</option>
+			<option value="上海" checked>上海</option>
+			<option value="杭州">杭州</option>
+			
+		</select>
+		<input type="button" name="btn1" value="按钮">
+		
+	</form>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+		#div1{
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			top: 200px;
+			left:500px;
+			background: red;
+		}
+	</style>
+	<script>
+	window.onload=function(){
+		var oDiv=document.getElementById("div1");
+		var b="";
+		oDiv.onmousedown=function(ev){
+			var ev=ev||event;
+			var disW=this.offsetWidth;//原来的宽度
+			var disX=ev.clientX;//原来鼠标点击的位置
+			var disL=this.offsetLeft;//鼠标点击时的点击元素的左边距
+
+			if(disX>this.offsetLeft+disW-10){
+				//alert('right');
+				b="right";
+			}
+			if(disX<this.offsetLeft+10){
+				//alert('left');
+				b="left";
+			}
+          
+			document.onmousemove=function(ev){
+				var ev=ev||event;
+
+				switch(b){
+					case 'left':
+					
+					oDiv.style.width=disW-(ev.clientX-disX)+'px';
+					oDiv.style.left=disL+(ev.clientX-disX)+'px';
+					break;
+					case 'right':
+					oDiv.style.width=disW+(ev.clientX-disX)+'px';
+					break;
+				}
+
+			}
+			document.onmouseup=function(){
+				document.onmousemove=document.onmouseup=null;
+			}
+			return false;
+
+		}
+	}
+	</script>
+</head>
+<body>
+	<div id="div1">
+		
+	</div>
+</body>
+</html>

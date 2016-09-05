@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	window.onload=function(){
+		var oTxt=document.getElementById("txt1");
+		var oBnt=document.getElementById("btn");
+
+		oTxt.onfocus=function(){
+			if(this.value=="请输入内容"){
+				this.value="";
+			}
+		}
+		oTxt.onblur=function(){
+			if(this.value==""){
+				this.value="请输入内容";
+			}
+		}
+		oTxt.focus();
+		oBnt.onclick=function(){
+			oTxt.select();
+		}
+	}
+	</script>
+</head>
+
+<body>
+	<input type="text" id="txt1" value="请输入内容" />
+	<input type="button" id="btn" value="全选" />
+</body>
+</html>

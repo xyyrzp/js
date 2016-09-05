@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	window.onload=function(){
+		var aBtn = document.getElementsByTagName('input');
+		var aP = document.getElementsByTagName('p');
+
+		var arr=['张三','张丽','小明'];
+
+		for(var i=0;i<aBtn.length;i++){
+
+			aBtn[i].index=i;//自定义索引值
+			aBtn[i].onclick=function(){
+
+				this.value=arr[this.index];
+
+				aP[this.index].innerHTML=arr[this.index];
+
+			};
+		}
+	};
+	</script>
+</head>
+<body>
+	<input type="button" value="btn1" />
+	<input type="button" value="btn2" />
+	<input type="button" value="btn3" />
+	<p>a</p>
+	<p>s</p>
+	<p>d</p>
+</body>
+</html>

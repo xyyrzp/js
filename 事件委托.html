@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	window.onload=function(){
+		var oBtn=document.getElementById("btn");
+		var oUlv=document.getElementById("ulv");
+		var oLi=document.getElementById("li");
+		var iNow=4;
+
+		oUlv.onmouseover=function(ev){
+              var oEvent=ev||event;
+              var target=oEvent.target||oEvent.srcElement;
+
+              if(target.nodeName.toLowerCase()=="li"){
+                  target.style.background="red";
+              }
+		};
+
+		oUlv.onmouseout=function(ev){
+              var oEvent=ev||event;
+              var target=oEvent.target||oEvent.srcElement;
+              
+              	target.style.background="";
+		};
+
+		oBtn.onclick=function(){
+			iNow++;
+			var oLi=document.createElement("li");
+			oLi.innerHTML=1111*iNow;
+			oUlv.appendChild(oLi);
+		}
+
+	}
+	</script>
+</head>
+<body>
+	<input type="button" id="btn" value="add" />
+	<ul id="ulv">
+		<li>111</li>
+		<li>2222</li>
+		<li>33333</li>
+		<li>444444</li>
+	</ul>
+</body>
+</html>

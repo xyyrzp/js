@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+		#div1{
+			width: 200px;
+			height: 200px;
+			background: red;
+			position: absolute;
+		}
+
+	</style>
+	<script>
+	window.onload=function(){
+		var oDiv=document.getElementById("div1");
+
+		var scrollLeft=document.documentElement.scrollLeft||document.body.scrollLeft;
+		var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+
+		document.onmouseover=function(ev){
+			var oEvent=ev||event;
+			//var target=oEvent.target||oEvent.srcElement;
+
+			oDiv.style.left=oEvent.clientX+scrollLeft+"px";
+			oDiv.style.top=oEvent.clientY+scrollTop+"px";
+
+		}
+	}
+	</script>
+</head>
+<body style="height:100000px;">
+	<div id="div1">
+		
+	</div>
+</body>
+</html>

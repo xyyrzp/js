@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	window.onload=function(){
+		var oBtn = document.getElementById('btn1');
+		var oUl = document.getElementById('list');
+		var arr=['范冰冰，1981年9月16日生于山东青岛，电影演员、歌手，毕业于上海','师范大学谢晋影视艺术学院。1996年参演电视剧《女强人》。1998年主演','电视剧《还珠格格》系列成名，2001年起投身大银幕。2004年凭借电影《','手机》获得第27届大众电影百花奖最佳女主角奖。2005年发行首张个人专','辑《刚刚开始》；同年主演电影《墨攻》。2007年，参演电影《心中有鬼》获得第44届台湾电影金马奖'];
+		var len = arr.length;
+		var onOff = true;
+		oBtn.onclick=function(){
+			if(onOff){
+            for(var i=0;i<len;i++){
+        	   oUl.innerHTML += '<li>' + arr[i] + '</li>';
+            }
+            onOff = false;
+        }
+
+		};
+		
+	};
+	</script>
+</head>
+<body>
+	<input id="btn1" type="button" value="自动生成5条新闻" />
+	<ul id="list">
+	</ul>
+</body>
+</html>

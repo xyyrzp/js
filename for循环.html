@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	window.onload=function(){
+		var oUl = document.getElementById('list');
+		var aUl = oUl.getElementsByTagName('ul');
+		var len=aUl.length;
+		var aLi = null;
+
+		for(var i=0;i<len;i++){
+			aLi = aUl[i].getElementsByTagName('li');
+			for(var j=0;j<aLi.length;j++){
+				aLi[j].style.border="1px solid red";
+			}
+
+		}
+	};
+	</script>
+</head>
+<body>
+	<ul id="list">
+		<li>
+			<h2>我的好友</h2>
+			<ul>
+				<li>张三</li>
+				<li>小丽</li>
+				<li>欧巴</li>
+			</ul>
+		</li>
+		<ol>
+			<li>111</li>
+			<li>2323</li>
+			<li>efrf</li>
+		</ol>
+		<li>
+			<h2>我的朋友</h2>
+			<ul>
+				<li>小明</li>
+				<li>乡长</li>
+				<li>班长</li>
+			</ul>
+		</li>
+		<ol>
+			<li>sadd111</li>
+			<li>dfvfvbg2323</li>
+			<li>2w2434r54efrf</li>
+		</ol>
+		
+	</ul>
+</body>
+</html>

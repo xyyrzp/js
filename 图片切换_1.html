@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	window.onload=function(){
+		var oImg = document.getElementById("img1");
+		var num = 0;
+		var arr = ['img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg'];
+
+		oImg.onclick=function(){
+			num++;
+			if(num == arr.length){//图片在最后一张时，返回第一张
+				num=0;
+			}
+			oImg.src = arr[num];
+		}
+
+	}
+	</script>
+</head>
+<body>
+	<img id="img1" src="img/1.jpg" width="200" />
+</body>
+</html>

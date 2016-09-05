@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	function CreatePerson(name){
+		 this.name = name;
+		 this.showName = function(){
+		 	alert(this.name);//(隐式调用)
+		 };
+	}
+
+	var p1 = new CreatePerson('xiaomei');
+		p1.showName();
+	var p2 = new CreatePerson('小明');
+		p2.showName();
+		var a=[1,2,3];
+		var b=a;
+		alert(a==b);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

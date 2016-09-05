@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	window.onload=function(){
+		var oDiv=document.getElementById('div1');
+		var oDiv2=document.getElementById('div2');
+
+		addClass(oDiv,'box2');
+		removeClass(oDiv2,'box1');
+		
+		function removeClass(obj,className){
+			if(obj.className!=''){
+			   var arrClassName=obj.className.split(' ');
+			   var _index=arrIndexOf(arrClassName,className);
+			   if(_index!=-1){
+			   	arrClassName.splice(_index,1);//返回下标_index，删除1个元素
+			   	obj.className=arrClassName.join(' ');//最后把删除后的数组赋给对象的className数组，用join把各个className拼接起来
+			   }
+
+
+					//var _index=arrClassName(obj)
+				
+			}
+		}
+
+
+		function addClass(obj,className){
+			if(obj.className==''){
+               obj.className==className;
+			}else{
+
+				var arrClassName=obj.className.split(' ');//把对象中的className按空格分开，存入数组arrClassName中
+				var _index=arrIndexOf(arrClassName,className);//调用arrIndexOf,返回值为_index;
+				//要添加的className在原来的className中没有，则添加；
+				//有的话就不添加
+				if(_index==-1){//由_index值得添加或不添加className;
+					obj.className+=' '+className;
+				}
+				
+			}
+
+		}
+
+		function arrIndexOf(arr,v){//传一个数组和值，遍历数组里面的值，数组里面有的话就返回值的下标，没有的话，返回-1；
+			for(var i=0;i<arr.length;i++){
+				if(arr[i]==v){
+					return i;
+				}
+			}
+			return -1;
+		}
+
+	}
+	</script>
+</head>
+<body>
+	<div id="div1" class="box">
+		div1
+	</div>
+	<div id="div2" class="box">
+		div2
+	</div>
+</body>
+</html>
